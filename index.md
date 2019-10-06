@@ -1,10 +1,9 @@
 ---
 layout: default
 ---
+[reveng](./reveng.html) | [vim](./vim.html) | [sdr](./sdr.html)
 
 # oscp prep and notes
-- [reveng](./reveng.html)
-
 ## find
 ### find files by size in currecnt directory
 - ```find . -type f -size <bytes>c```
