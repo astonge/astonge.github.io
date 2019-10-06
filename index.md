@@ -4,6 +4,14 @@ layout: default
 
 oscp prep and notes
 
-## find
+# find
 ### find files by size in currecnt directory
 - ```find . -type f -size <bytes>c```
+### find passed to xargs
+- ```find . -type f | xargs grep "<pattern>"```
+
+# xxd
+### make a hexdump or do the reverse
+- ```xxd <infile> <outfile>```
+- ```xxd -r <infile> <outfile>```
+- ```cat <hexfile> | xxd -r```
