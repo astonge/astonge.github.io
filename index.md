@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
-[reveng](./reveng.html) | [vim](./vim.html) | [sdr](./sdr.html)
+- [reveng](./reveng.html)
+- [vim](./vim.html)
+- [sdr](./sdr.html)
 
 # oscp prep and notes
 ## find
