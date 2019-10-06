@@ -2,6 +2,8 @@
 layout: default
 ---
 
-old as dirt pentester wannabe trying to live his best life.
+oscp prep and notes
 
-## tools and techniques.
+## find
+### find files by size in currecnt directory
+- ```find . -type f -size <bytes>c```
