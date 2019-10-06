@@ -3,6 +3,7 @@ layout: default
 ---
 
 # oscp prep and notes
+- [reveng](./reveng.html)
 
 ## find
 ### find files by size in currecnt directory
