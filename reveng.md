@@ -4,6 +4,11 @@ layout: default
 
 ## Reverse Engineering
 
-_yay_
+- [malware unicorn workshops](https://malwareunicorn.org/#/workshops)
+- [colin hardy YT](https://www.youtube.com/channel/UCND1KVdVt8A580SjdaS4cZg/videos)
+
+## Hunting bots
+
+_how to do?_
 
 [back](./)
