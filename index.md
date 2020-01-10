@@ -19,5 +19,5 @@ layout: default
 
 
 ## oscp - bof practice
-[reddit - Buffer overflow practice for OSCP?](https://www.reddit.com/r/netsecstudents/comments/9ld0ps/buffer_overflow_practice_for_oscp/)
-[OSCP Course & Exam Preparation](https://411hall.github.io/OSCP-Preparation/)
+- [reddit - Buffer overflow practice for OSCP?](https://www.reddit.com/r/netsecstudents/comments/9ld0ps/buffer_overflow_practice_for_oscp/)
+- [OSCP Course & Exam Preparation](https://411hall.github.io/OSCP-Preparation/)
