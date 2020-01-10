@@ -16,3 +16,7 @@ layout: default
 - ```xxd <infile> <outfile>```
 - ```xxd -r <infile> <outfile>```
 - ```cat <hexfile> | xxd -r```
+
+
+## oscp - bof practice
+[reddit - Buffer overflow practice for OSCP?](https://www.reddit.com/r/netsecstudents/comments/9ld0ps/buffer_overflow_practice_for_oscp/)
