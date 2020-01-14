@@ -9,7 +9,9 @@ layout: default
 ## find
 ### find files by size in currecnt directory
 - ```find . -type f -size <bytes>c```
-- ```find . -type f | xargs grep "<pattern>"```
+- ```find . -type f | xargs grep "<pattern>"``
+- ```find / -user <user|userid>```
+- ```find / -group <group|groupid>```
 
 ## xxd
 ### make a hexdump or do the reverse
