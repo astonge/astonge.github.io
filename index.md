@@ -1,5 +1,6 @@
 ---
-layout: default
+title: [INDEX]
+layout: home
 ---
 - [reveng](./reveng.html)
 - [vim](./vim.html)
