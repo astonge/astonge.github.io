@@ -1,6 +1,5 @@
 ---
-title: [REVENG]
-layout: post
+title: /REVENG
 ---
 
 ## Reverse Engineering

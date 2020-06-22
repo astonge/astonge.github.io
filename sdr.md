@@ -1,5 +1,5 @@
 ---
-layout: default
+title: /SDR
 ---
 
 ## software defined radios
