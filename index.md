@@ -1,10 +1,7 @@
 ---
-title: [INDEX]
+title: /INDEX
 layout: home
 ---
-- [reveng](./reveng.html)
-- [vim](./vim.html)
-- [sdr](./sdr.html)
 
 # oscp prep and notes
 ## find

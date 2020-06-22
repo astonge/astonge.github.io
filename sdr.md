@@ -6,4 +6,3 @@ title: /SDR
 
 _yay_
 
-[back](./)

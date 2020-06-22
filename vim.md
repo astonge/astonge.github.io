@@ -1,9 +1,8 @@
 ---
-layout: default
+title: /VIM
 ---
 
 ## vim cheatsheet
 
 _yay_
 
-[back](./)
