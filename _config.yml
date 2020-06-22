@@ -1,4 +1,7 @@
-title: spacemonkey
+remote_theme: b2a3e8/jekyll-theme-console
+style: dark
+title: sp4c3m0nk3y
 description: ready to be shot into space
+header_pages:
+	- index.md
 show_downloads: false
-theme: jekyll-theme-hacker
