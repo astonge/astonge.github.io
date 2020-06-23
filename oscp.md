@@ -2,6 +2,8 @@
 title: /OSCP
 ---
 
+![OSCP HTB Boxes](tjnulls.jpg)
+
 # oscp prep and notes
 ## find
 ### find files by size in currecnt directory
