@@ -31,8 +31,11 @@ _4-7 years experiance in the at least 3 of the following:_
 - Network penetration testing and manipulation of network infrastructure
 - Mobile and/or web application assessments
 - Email, phone, or physical social-engineering assessments
-- Shell scripting or automation of simple tasks using Perl, Python, or Ruby
+- **Shell scripting or automation of simple tasks using Perl, Python, or Ruby**
 - Developing, extending, or modifying exploits, shellcode or exploit tools
 - Developing applications in C#, ASP, .NET, ObjectiveC, Go, or Java (J2EE)
 - Reverse engineering malware, data obfuscators, or ciphers
 - Source code review for control flow and security flaws
+- Strong knowledge of tools used for wireless, web application, and network security testing
+- Thorough understanding of network protocols, data on the wire, and covert channels
+- Mastery of Unix/Linux/Mac/Windows operating systems, including bash and Powershell
