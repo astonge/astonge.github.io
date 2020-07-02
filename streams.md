@@ -3,7 +3,7 @@ title: /STREAMS
 ---
 
 # yt
-- [colinhardy]https://www.youtube.com/channel/UCND1KVdVt8A580SjdaS4cZg)
+- [colinhardy](https://www.youtube.com/channel/UCND1KVdVt8A580SjdaS4cZg)
 - [hak5](https://www.youtube.com/channel/UC3s0BtrBJpwNDaflRSoiieQ)
 - [johnhammond](https://www.youtube.com/channel/UCVeW9qkBjo3zosnqUbG7CFw)
 - [devientollam](https://www.youtube.com/channel/UC4dxXZQq-ofAadUWbqhoceQ)
