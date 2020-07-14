@@ -39,3 +39,8 @@ _4-7 years experiance in the at least 3 of the following:_
 - Strong knowledge of tools used for wireless, web application, and network security testing
 - **Thorough understanding of network protocols, data on the wire, and covert channels**
 - **Mastery of Unix/Linux/Mac/Windows operating systems, including bash and Powershell**
+
+## other
+
+- (win priv esc)[https://www.udemy.com/course/windows-privilege-escalation/]
+- (lin priv esc)[https://www.udemy.com/course/linux-privilege-escalation/]
