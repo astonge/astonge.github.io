@@ -42,5 +42,5 @@ _4-7 years experiance in the at least 3 of the following:_
 
 ## other
 
-- (win priv esc)[https://www.udemy.com/course/windows-privilege-escalation/]
-- (lin priv esc)[https://www.udemy.com/course/linux-privilege-escalation/]
+- [win priv esc](https://www.udemy.com/course/windows-privilege-escalation/)
+- [lin priv esc](https://www.udemy.com/course/linux-privilege-escalation/)
