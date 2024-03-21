@@ -1,1 +1,1 @@
-https://www.ajsto.dev/
+Redirect to https://www.ajsto.dev/
