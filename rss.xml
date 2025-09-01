@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>a570.xyz - RSS Feed</title>
+    <link>https://a570.xyz/</link>
+    <description>adventures in babysitting</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Sep 2025 14:44:35 -0700</lastBuildDate>
+    <atom:link href="https://a570.xyz/rss.xml" rel="self" type="application/rss+xml" />
+</channel>
+</rss>
