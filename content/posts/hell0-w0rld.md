@@ -14,4 +14,4 @@ hideComments = false
 +++
 here we go again.. is the 101th time the charm? 
 
-![a570](https://a570.xyz/images/asto-bloody.png)
+![a570](/asto-bloody.png)
