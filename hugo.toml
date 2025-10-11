@@ -2,3 +2,6 @@ baseURL = 'https://a570.xyz/'
 languageCode = 'en-us'
 title = 'a570 - technolust diaries'
 theme = 'terminal'
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
