@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Wireshark Fun With Python and Lua Part 1 :: a570 - technolust diaries</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" dissectors I&rsquo;ve always been curious how wireshark displays the protocol information that gets captured. A quick googling shows that&rsquo;s called a dissector. Neat-o! Seems like there are two ways to make dissectors. Code them in C or script them in lua.
+So I chose lua to create a simple dissector but the first thing that comes to mind as I&rsquo;m setting it up.. what protocol should I dissect?
+There is a lot to protocols, a lot more than I wanted to dig into at the time. just want to dip my toes in as it were. so, I thought to myself, let&rsquo;s make my own protocol! \ What could go wrong???
+" />
+<meta name="keywords" content=", " />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/wireshark-fun-with-python-and-lua-part-1/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.ac931bbc86c095a0317f09b4e78ee5ad4764c137436645a167047cc2ea49a017.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.a940752aafdcf23e1453e2062170bd9c4d85932779e8d5ec2fd032cdcf81acfd.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.50c1c942103c94ef5432d9afaa80aa682032f33887783e3118cfa9ac29b946be.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Wireshark Fun With Python and Lua Part 1">
+<meta property="og:description" content=" dissectors I&rsquo;ve always been curious how wireshark displays the protocol information that gets captured. A quick googling shows that&rsquo;s called a dissector. Neat-o! Seems like there are two ways to make dissectors. Code them in C or script them in lua.
+So I chose lua to create a simple dissector but the first thing that comes to mind as I&rsquo;m setting it up.. what protocol should I dissect?
+There is a lot to protocols, a lot more than I wanted to dig into at the time. just want to dip my toes in as it were. so, I thought to myself, let&rsquo;s make my own protocol! \ What could go wrong???
+" />
+<meta property="og:url" content="http://localhost:1313/posts/wireshark-fun-with-python-and-lua-part-1/" />
+<meta property="og:site_name" content="a570 - technolust diaries" />
+
+  
+  
+  <meta property="og:image" content="http://localhost:1313/">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-09-29 22:43:20 -0700 PDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+  <div class="logo">
+    a570 - technolust diaries
+  </div>
+</a>
+
+    </div>
+    
+    
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/wireshark-fun-with-python-and-lua-part-1/">Wireshark Fun With Python and Lua Part 1</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-09-29</time>
+    
+  </div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <!-- raw HTML omitted -->
+<h2 id="dissectors">dissectors<a href="#dissectors" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>I&rsquo;ve always been curious how wireshark displays the protocol information that gets captured. A quick googling shows that&rsquo;s called a dissector.
+Neat-o! <br>
+Seems like there are two ways to make dissectors. Code them in C or script them in lua.</p>
+<p>So I chose lua to create a simple dissector but the first thing that comes to mind as I&rsquo;m setting it up.. what protocol should I dissect?<br>
+There is a lot to protocols, a lot more than I wanted to dig into at the time. just want to dip my toes in as it were. so, I thought to myself, let&rsquo;s make my own protocol! <br>
+\
+What could go wrong???</p>
+<p><img src="https://i.imgur.com/hpz3eWS.jpeg" alt="this is fine"></p>
+<h2 id="my-own-protocol">my own protocol<a href="#my-own-protocol" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Need a quick and dirty poc? Pythons got your back baby boo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> socket
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> struct
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># send string data via UDP</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">send_udp_data</span>(s_to, s_from, s_message):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># set UDP connection info</span>
+</span></span><span style="display:flex;"><span>    UDP_IP<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.1&#34;</span>
+</span></span><span style="display:flex;"><span>    UDP_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">1234</span>
+</span></span><span style="display:flex;"><span>    proto_format <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;&gt;16s16s24s&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># convert strings to bytes</span>
+</span></span><span style="display:flex;"><span>    b_to <span style="color:#f92672">=</span> s_to<span style="color:#f92672">.</span>encode(encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>)
+</span></span><span style="display:flex;"><span>    b_from <span style="color:#f92672">=</span> s_from<span style="color:#f92672">.</span>encode(encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>)
+</span></span><span style="display:flex;"><span>    b_message <span style="color:#f92672">=</span> s_message<span style="color:#f92672">.</span>encode(encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># create UDP socket</span>
+</span></span><span style="display:flex;"><span>    sock <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET,socket<span style="color:#f92672">.</span>SOCK_DGRAM)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># pack data using defined protocl format</span>
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> struct<span style="color:#f92672">.</span>pack(proto_format, b_to, b_from, b_message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># send data over UDP</span>
+</span></span><span style="display:flex;"><span>    sock<span style="color:#f92672">.</span>sendto(data, (UDP_IP,UDP_PORT))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>send_udp_data(<span style="color:#e6db74">&#39;Player 1&#39;</span>, <span style="color:#e6db74">&#39;Player 2&#39;</span>, <span style="color:#e6db74">&#39;Good luck, have fun!&#39;</span>)
+</span></span><span style="display:flex;"><span>send_udp_data(<span style="color:#e6db74">&#39;Player 2&#39;</span>, <span style="color:#e6db74">&#39;Player 1&#39;</span>, <span style="color:#e6db74">&#39;lol gg&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Data Sent&#34;</span>)
+</span></span></code></pre></div><p>After a bit of thinking I figured the easiest approach would be to simulate a video game &ldquo;chat system&rdquo;. I love first person shooters (quake, call of duty, etc.) and thinking back to my quake2 modding days I know UDP is used for sending game data.</p>
+<p>So let&rsquo;s use that.</p>
+<p><img src="https://img-9gag-fun.9cache.com/photo/aqNXRp7_700bwp.webp" alt="udp joke"></p>
+<p>I&rsquo;m not going to deep dive into this code but I&rsquo;ll give a general overview:</p>
+<h3 id="main-section">main section<a href="#main-section" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ul>
+<li>import &lsquo;socket&rsquo; and &lsquo;struct&rsquo; packages<br>
+(&lsquo;struct&rsquo; will help us &ldquo;format&rdquo; the protocol data)</li>
+<li>define a function for sending three strings over UDP</li>
+<li>cool. cool cool cool.</li>
+</ul>
+<h3 id="send_udp_data-function">send_udp_data function<a href="#send_udp_data-function" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ul>
+<li>hardcode our network settings<br>
+(IP and PORT to send data to)</li>
+<li><code>proto_format</code><br>
+(this is passed to <code>struct.pack()</code> to format the data for sending over the network more on this in a bit)</li>
+<li>encode strings to bytes (convert data to binary! yay!)</li>
+<li>create a socket</li>
+<li>pack/format data as defined in <code>proto_format</code></li>
+<li>finally, we send everything to the IP address and PORT we defined earlier</li>
+</ul>
+<h3 id="proto_format">proto_format<a href="#proto_format" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>I&rsquo;ll explain this a bit further because otherwise it just looks like black magic, and I don&rsquo;t want to be labeled a witch!</p>
+<p>.. and by explain I mean I&rsquo;ll copy/paste from the <a href="https://docs.python.org/3/library/struct.html">struct package documentation</a> obviously..</p>
+<blockquote>
+<p>Format Strings</p>
+<p>Format strings describe the data layout when packing and unpacking data. They are built up from format characters, which specify the type of data being packed/unpacked. In addition, special characters control the byte order, size and alignment. Each format string consists of an optional prefix character which describes the overall properties of the data and one or more format characters which describe the actual data values and padding.</p></blockquote>
+<p>So&hellip; that really takes the fiddles out of prepping the data for transport. Obviously, I used big-endian. What are the special characters all about?</p>
+<ul>
+<li>The format string:
+<code>&gt;16s16s24s</code></li>
+</ul>
+<p>It can be read as: <code>big-endian</code> followed by three fields which are <code>16 byte</code> string .. followed by a <code>16 byte</code> string .. followed by a <code>24 byte</code> string.</p>
+<p>At least that&rsquo;s the way I understand it but sometimes I have no idea what&rsquo;s going on..</p>
+<p><img src="https://giffiles.alphacoders.com/361/36140.gif" alt="come on.."></p>
+<p>Again, <a href="https://docs.python.org/3/library/struct.html#format-characters">RTFM about struct</a>.. <br>
+Looks like I can pack various types of data using different format strings:</p>
+<ul>
+<li>&rsquo;s&rsquo; == char array in C types</li>
+<li>&lsquo;c&rsquo; == singular char in C types</li>
+<li>&lsquo;i&rsquo; == int in C types</li>
+<li>&lsquo;f&rsquo; for &lsquo;float&rsquo; type</li>
+<li>&rsquo;d&rsquo; for double</li>
+</ul>
+<p>.. and so on. Pretty neat huh?</p>
+<p>The first field is <code>16s</code> which translate to <code>16 byte string\char array</code></p>
+<p>Back to the &lsquo;video game chat system simulation&rsquo;. A couple of messages between players are sent (again, this is just a simulation/poc). Using <code>&lt;string&gt;.encode()</code> to make sure the strings are encoded as bytes because the <code>struct.pack()</code> method only accepts data in bytes.</p>
+<p>Here is what the <code>data</code> variable looks like before sending out over UDP:</p>
+<pre tabindex="0"><code>b&#39;Player 1\x00\x00\x00\x00\x00\x00\x00\x00Player 2\x00\x00\x00\x00\x00\x00\x00\x00Good luck, have fun!\x00\x00\x00\x00&#39;
+b&#39;Player 2\x00\x00\x00\x00\x00\x00\x00\x00Player 1\x00\x00\x00\x00\x00\x00\x00\x00lol gg\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00&#39;
+</code></pre><p>Notice how it adds padding (<code>\x00</code>) to fill out the data so it matches what was specified in the format string. <br>
+<code>Player 1</code> is 8 characters long and its followed by eight <code>\x00</code>s which equals 16! <code>Player 2</code>.. same thing. <br>
+The &ldquo;message&rdquo; field should be 24 bytes in size. <br>
+&ldquo;Good luck, have fun!&rdquo; is 20 chars long followed by four <code>\x00</code>s!</p>
+<p>:D <em>nice nice</em>.</p>
+<p>Okay dokay.. that was a lot. The data is being encoded, formatted and sent over the wire. Now the other side needs to be worked on, I&rsquo;ll cover the actual wireshark dissector&rsquo;ing in part 2</p>
+<p>&ndash; asto</p>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 adrian st onge</span>
+    
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
