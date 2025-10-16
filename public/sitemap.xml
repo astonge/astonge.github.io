@@ -3,7 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-10-10T23:09:45-07:00</lastmod>
+    <lastmod>2025-10-13T01:36:42-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/links/</loc>
+    <lastmod>2025-10-13T01:36:42-07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-10-10T23:09:45-07:00</lastmod>
@@ -16,6 +19,8 @@
   </url><url>
     <loc>http://localhost:1313/posts/hell0-w0rld/</loc>
     <lastmod>2025-09-27T21:01:59-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/asto-2025/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>

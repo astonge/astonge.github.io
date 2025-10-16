@@ -6,8 +6,15 @@
     <description>Recent content on a570 - technolust diaries</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Oct 2025 22:47:38 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 13 Oct 2025 01:36:42 -0700</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Links</title>
+      <link>http://localhost:1313/links/</link>
+      <pubDate>Mon, 13 Oct 2025 01:36:42 -0700</pubDate>
+      <guid>http://localhost:1313/links/</guid>
+      <description>&lt;h2 id=&#34;other-blogs&#34;&gt;other blogs&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://micahflee.com/&#34;&gt;michalee&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.404media.co/&#34;&gt;404 media&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>TIL</title>
       <link>http://localhost:1313/posts/til-100525/</link>
@@ -28,6 +35,13 @@
       <pubDate>Sat, 27 Sep 2025 21:01:59 -0700</pubDate>
       <guid>http://localhost:1313/posts/hell0-w0rld/</guid>
       <description>&lt;p&gt;here we go again.. is the 101th time the charm?&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/asto-bloody.png&#34; alt=&#34;a570&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/asto-2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/asto-2025/</guid>
+      <description>&lt;h1 id=&#34;adrian-st-onge&#34;&gt;&lt;strong&gt;Adrian St. Onge&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;p&gt;3924 28 St&lt;br&gt;&#xA;Vernon, BC&lt;br&gt;&#xA;&lt;strong&gt;(250) 540-1374&lt;/strong&gt;&lt;br&gt;&#xA;&lt;a href=&#34;mailto:astonge@gmail.com&#34;&gt;&lt;strong&gt;astonge@gmail.com&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/astonge&#34;&gt;&lt;strong&gt;https://github.com/astonge&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;&#xA;&lt;strong&gt;&lt;a href=&#34;https://a570.xyz/&#34;&gt;https://a570.xyz/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;professional-summary&#34;&gt;&lt;strong&gt;Professional Summary&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Experienced developer with over 5 years experience in web development and programming with a solid foundation in cybersecurity frameworks, protocols, and principles. Detail-oriented and dependable candidate interested in transitioning from a development role to a cyber security role.&lt;/p&gt;&#xA;&lt;p&gt;Successful at managing multiple priorities and tasks. Results-driven with a deep understanding of vulnerability assessment and risk management across diverse environments including web, mobile and networks.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
