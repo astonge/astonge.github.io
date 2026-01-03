@@ -2,28 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://a570.xyz/</loc>
     <lastmod>2025-10-13T01:36:42-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/links/</loc>
+    <loc>https://a570.xyz/links/</loc>
     <lastmod>2025-10-13T01:36:42-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://a570.xyz/posts/</loc>
     <lastmod>2025-10-10T23:09:45-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/til-100525/</loc>
+    <loc>https://a570.xyz/posts/wireshark-fun-with-python-and-lua-part-2/</loc>
+    <lastmod>2025-10-10T23:09:45-07:00</lastmod>
+  </url><url>
+    <loc>https://a570.xyz/posts/til-100525/</loc>
     <lastmod>2025-10-05T22:47:38-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/wireshark-fun-with-python-and-lua-part-1/</loc>
+    <loc>https://a570.xyz/posts/wireshark-fun-with-python-and-lua-part-1/</loc>
     <lastmod>2025-09-29T22:43:20-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hell0-w0rld/</loc>
+    <loc>https://a570.xyz/posts/hell0-w0rld/</loc>
     <lastmod>2025-09-27T21:01:59-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/asto-2025/</loc>
+    <loc>https://a570.xyz/asto-2025/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://a570.xyz/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://a570.xyz/tags/</loc>
   </url>
 </urlset>
